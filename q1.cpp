@@ -3,8 +3,7 @@
 using namespace std;
 
 //The construction of the node
-struct node
-{
+struct node{
 int data;
 node *next;
 };
@@ -17,8 +16,7 @@ node *head,*tail;
 int n;
 //Public elements:
 public:
-linkedList() 
-{
+linkedList(){
 head==NULL;
 tail==NULL;
 n=0;
@@ -29,35 +27,34 @@ void addnode ( int n){
 node *temp=new node;
 temp->data=n;
 temp->next=NULL;
-
 //If the linked list is empty 
 if (head==NULL){
-	head=temp;
-	tail=temp;
-	++n;
+head=temp;
+tail=temp;
+++n;
 }
 //If the linked list is not empty
 else if(head!=NULL){
-	tail->next=temp;
-	tail=temp;
-	++n;
+tail->next=temp;
+tail=temp;
+++n;
 }
 }
 
 //Counting function - function for counting the number of elements in the linked list
-void countnode() {
+void countnode(){
 node *temp;
 temp=head;
 if (head==NULL){
-	cout<<"The list is empty"<<"\n";
+cout<<"The list is empty"<<"\n";
 }
 else if(head!=NULL) {
-	int length=0;
-	while(temp!=NULL) {
-		length++;
-		temp=temp->next;
-	}
-	cout<<"The number of elements in the linkedlist are"<<"\n";
+int length=0;
+while(temp!=NULL) {
+length++;
+temp=temp->next;
+}
+cout<<"The number of elements in the linkedlist are"<<"\n";
 }
 }
 
@@ -70,34 +67,34 @@ prev=cur;
 node *temp=new node;
 temp->data=n2;
 temp->next=NULL;
-    while(count!=pos1){
-        prev=cur;
-        cur=cur->next;
-        count++;
+while(count!=pos1){
+prev=cur;
+cur=cur->next;
+count++;
 }
 prev->next=temp;
 temp->next=cur;
-++n;
+++n2;
 }
 
 //Delete function - function for deleting a node at end
 void deletenode() {
 //If the linked list is empty
 if (head==NULL){
-	cout<<"The list is empty"<<"\n";
+cout<<"The list is empty"<<"\n";
 }
 //If the linked list has only one node
 else if(head==tail){
-	delete head;
-	head=NULL;
-	tail=NULL;
+delete head;
+head=NULL;
+tail=NULL;
 }
 //If the linked list has more than one node
 else if(head!=NULL){
-	node *temp;
-	temp=head;
-	head=head->next;
-	delete temp;
+node *temp;
+temp=head;
+head=head->next;
+delete temp;
 }
 }
 
@@ -108,10 +105,10 @@ node *cur,*prev;
 node *temp;
 cur=head;
 while(count!=pos2){
-	temp=cur;
-	prev->next=temp;
-	cur=cur->next;
-	count++;
+temp=cur;
+prev->next=temp;
+cur=cur->next;
+count++;
 }
 delete temp;
 prev->next=cur;
@@ -122,14 +119,14 @@ void displaynode() {
 node *temp;
 temp=head;
 if (head==NULL){
-	cout<<"The list is empty"<<"\n";
+cout<<"The list is empty"<<"\n";
 }
 else if(head!=NULL){
-    cout<<"The elements of the list are : "<<"\n";
-    while(temp!=NULL){
-    	cout<<temp->data<<" ";
-    	temp=temp->next;
-    }
+cout<<"The elements of the list are : "<<"\n";
+while(temp!=NULL){
+cout<<temp->data<<" ";
+temp=temp->next;
+}
 }
 }
 
