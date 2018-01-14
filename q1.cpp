@@ -13,13 +13,11 @@ class linkedList{
 //Private elements:
 private:
 node *head,*tail;
-int n;
 //Public elements:
 public:
 linkedList(){
 head==NULL;
 tail==NULL;
-n=0;
 }
 
 //Addition function - function for inserting a node at the end
@@ -31,30 +29,27 @@ temp->next=NULL;
 if (head==NULL){
 head=temp;
 tail=temp;
-++n;
 }
 //If the linked list is not empty
-else if(head!=NULL){
+else
 tail->next=temp;
 tail=temp;
-++n;
-}
 }
 
 //Counting function - function for counting the number of elements in the linked list
 void countnode(){
 node *temp;
 temp=head;
+int length=0;
 if (head==NULL){
 cout<<"The list is empty"<<"\n";
 }
-else if(head!=NULL) {
-int length=0;
+else if(head!=NULL){
 while(temp!=NULL) {
 length++;
 temp=temp->next;
 }
-cout<<"The number of elements in the linkedlist are"<<"\n";
+cout<<"The number of elements in the linkedlist are "<<length<<"\n";
 }
 }
 
@@ -74,7 +69,6 @@ count++;
 }
 prev->next=temp;
 temp->next=cur;
-++n2;
 }
 
 //Delete function - function for deleting a node at end
@@ -90,7 +84,7 @@ head=NULL;
 tail=NULL;
 }
 //If the linked list has more than one node
-else if(head!=NULL){
+else {
 node *temp;
 temp=head;
 head=head->next;
@@ -121,14 +115,14 @@ temp=head;
 if (head==NULL){
 cout<<"The list is empty"<<"\n";
 }
-else if(head!=NULL){
+else
 cout<<"The elements of the list are : "<<"\n";
 while(temp!=NULL){
 cout<<temp->data<<" ";
 temp=temp->next;
 }
 }
-}
+};
 
 //Main function of the programme
 int main() {
@@ -143,7 +137,7 @@ l.displaynode();
 l.countnode();
 cout<<"Enter the data and the position to be added"<<"\n";
 cin>>n2>>pos1;
-l.insertnode(9,4);
+l.insertnode(n2,pos1);
 l.displaynode();
 l.deletenode();
 cout<<"Enter the position to be deleted"<<"\n";
