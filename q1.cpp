@@ -3,38 +3,44 @@
 using namespace std;
 
 //The construction of the node
-struct node{
+struct node
+{
 int data;
 node *next;
 };
 
 //LinkedList class
-class linkedlist{
+class linkedList{
 //Private elements:
-private;
+private:
 node *head,*tail;
+int n;
 //Public elements:
-public;
-linkedlist() {
+public:
+linkedList() 
+{
 head==NULL;
 tail==NULL;
+n=0;
 }
 
 //Addition function - function for inserting a node at the end
-void addnode ( int n1){
+void addnode ( int n){
 node *temp=new node;
-temp->data=n1;
+temp->data=n;
 temp->next=NULL;
 
 //If the linked list is empty 
 if (head==NULL){
 	head=temp;
 	tail=temp;
+	++n;
 }
 //If the linked list is not empty
 else if(head!=NULL){
 	tail->next=temp;
 	tail=temp;
+	++n;
 }
 }
 
@@ -60,22 +66,18 @@ void insertnode (int n2, int pos1) {
 int count=1;
 node *cur,*prev;
 cur=head;
-prev=head;
+prev=cur;
 node *temp=new node;
-temp->data=n1;
+temp->data=n2;
 temp->next=NULL;
-if(pos1<=length){
     while(count!=pos1){
-	    prev=cur;
+        prev=cur;
         cur=cur->next;
-	    count++;
+        count++;
 }
 prev->next=temp;
-temp->next==cur;
-}
-else if(pos1>length){
-	cout<<"The linked list does have that much elements"<<"\n";
-}
+temp->next=cur;
+++n;
 }
 
 //Delete function - function for deleting a node at end
@@ -85,13 +87,13 @@ if (head==NULL){
 	cout<<"The list is empty"<<"\n";
 }
 //If the linked list has only one node
-if else(head==tail){
+else if(head==tail){
 	delete head;
 	head=NULL;
 	tail=NULL;
 }
 //If the linked list has more than one node
-if else(head!=NULL){
+else if(head!=NULL){
 	node *temp;
 	temp=head;
 	head=head->next;
@@ -134,22 +136,22 @@ else if(head!=NULL){
 //Main function of the programme
 int main() {
 int pos1,n2,pos2;
-linkedlist 1;
-1.addnode(1);
-1.addnode(3);
-1.addnode(5);
-1.addnode(7);
-1.addnode(9);
-1.dispaly();
-1.countnode();
+linkedList l;
+l.addnode(1);
+l.addnode(3);
+l.addnode(5);
+l.addnode(7);
+l.addnode(9);
+l.displaynode();
+l.countnode();
 cout<<"Enter the data and the position to be added"<<"\n";
-cin<<n2,pos1
-1.addnode(n2,pos1);
-1.display();
-1.deletenode();
+cin>>n2>>pos1;
+l.insertnode(9,4);
+l.displaynode();
+l.deletenode();
 cout<<"Enter the position to be deleted"<<"\n";
 cin>>pos2;
-1.deleteat(pos2);
-1.display();
+l.deleteat(pos2);
+l.displaynode();
 return 0;
 }
