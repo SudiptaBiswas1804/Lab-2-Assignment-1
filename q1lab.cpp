@@ -62,11 +62,18 @@ prev=cur;
 node *temp=new node;
 temp->data=n2;
 temp->next=NULL;
-int length=countnode();
 while(count!=pos1){
 prev=cur;
 cur=cur->next;
-count++;->next is empty
+count++;
+}
+prev->next=temp;
+temp->next=cur;
+}
+
+//Delete function - function for deleting a node at end
+void deletenode() {
+//If the linked list is empty
 if (head==NULL){
 cout<<"The list is empty"<<"\n";
 }
