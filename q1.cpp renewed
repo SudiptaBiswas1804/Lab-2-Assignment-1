@@ -137,13 +137,14 @@ l.addnode(7);
 l.addnode(9);
 l.displaynode();
 l.countnode();
-//Integer and the position to be deleted 
+//Integer and the position to be inserted 
 cin>>n2>>pos1;
 cout<<"After insertion of the node at "<<pos1<<"\n";
 l.insertnode(n2,pos1);
 l.displaynode();
 l.deletenode();
 l.displaynode();
+//Position to be deleted
 cin>>pos2;
 cout<<"After deletion of the node at "<<pos2<<"\n";
 l.deleteat(pos2);
